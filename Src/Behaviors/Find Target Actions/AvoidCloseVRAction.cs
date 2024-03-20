@@ -416,9 +416,7 @@ public class AvoidCloseVRAction : BTNode
         float m = (rayPoint2.z - rayPoint1.z) / (rayPoint2.x - rayPoint1.x != 0 ? rayPoint2.x - rayPoint1.x : Mathf.Epsilon); // make certain m cannot be undefined
         float c = rayPoint1.z - (m * rayPoint1.x);
 
-        bool lineIntersects = (c * c) < ((ellipseFoci.x * ellipseFoci.x) * (m * m)) + (ellipseFoci.y * ellipseFoci.y);
-
-        if (lineIntersects)
+        if ((c * c) < ((ellipseFoci.x * ellipseFoci.x) * (m * m)) + (ellipseFoci.y * ellipseFoci.y)) // line intersects but ray not guaranteed
         {
             float qa = (1 / (ellipseFoci.x * ellipseFoci.x)) + ((m * m) / (ellipseFoci.y * ellipseFoci.y));
             float qb = (2 * m * c) / (ellipseFoci.y * ellipseFoci.y);
