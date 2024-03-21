@@ -11,9 +11,9 @@ using UnityEngine;
 /// until the AI is able to escape.
 /// 
 /// There are three ellipses: the center ellipse, inner ellipse, and outer ellipse. 
-/// When the AI is inside the outer ellipse, its movement path is checked for intersections with the inner ellipse.
-/// When the AI is inside the inner ellipse, it 
-/// When the AI is 
+/// When the AI is inside the outer ellipse, it checks if it is inside of the inner ellipse or if its movement 
+/// path intersects with the inner ellipse. If either of these conditions are true, then it moves along the 
+/// middle ellipse clockwise or counterclockwise.
 /// </summary>
 public class AvoidCloseVRAction : BTNode
 {
@@ -338,7 +338,7 @@ public class AvoidCloseVRAction : BTNode
             float ret = ((ratio + ((relInt + i) % ellipseLUT.Length)) / ellipseLUT.Length * 360) - 180;
             return ret; 
         }
-        else // is moving right //! add to distance
+        else // is moving right 
         {
             float rel = (signedAngle + 180) / 360 * ellipseLUT.Length;
             int relInt = ((int)rel) % ellipseLUT.Length;
