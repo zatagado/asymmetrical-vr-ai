@@ -237,7 +237,7 @@ public class AIController : MonoBehaviour, PCInputInterface
         // AI does this while in the air
         BTSequence midAir = new BTSequence(new List<BTNode> {
             new IsMidAirConditional(this),
-            new RotateMidAir(this)
+            new RotateMidAirAction(this)
         });
 
         // AI avoids VR player within a certain elliptical radius of them

@@ -1,16 +1,16 @@
 ﻿/// <summary>
 /// Rotates the AI player model while in mid air.
 /// </summary>
-public class RotateMidAir : BTNode
+public class RotateMidAirAction : BTNode
 {
     private AIController ai = null;
 
     /// <summary>
-    /// Constructor for RotateMidAir node.
+    /// Constructor for RotateMidAirAction node.
     /// Rotates the AI player model while in mid air.
     /// </summary>
     /// <param name="aiController">The aiController object for the AI.</param>
-    public RotateMidAir(AIController aiController)
+    public RotateMidAirAction(AIController aiController)
     {
         ai = aiController;
     }
