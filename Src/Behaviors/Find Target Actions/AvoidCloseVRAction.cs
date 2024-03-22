@@ -90,9 +90,9 @@ public class AvoidCloseVRAction : BTNode
     /// until the AI is able to escape.
     /// </summary>
     /// <param name="ai">The aiController object for the AI.</param>
-    /// <param name="maxFoci"></param>
-    /// <param name="innerFociOffset"></param>
-    /// <param name="outerFociOffset"></param>
+    /// <param name="maxFoci">The largest possible foci of the ellipse.</param>
+    /// <param name="innerFociOffset">The offset from the max foci to make the foci of the inner ellipse.</param>
+    /// <param name="outerFociOffset">The offset from the max foci to make the foci of the outer ellipse.</param>
     /// <param name="centerOffset">Offset of the player from the center of the ellipse on the z axis.</param>
     /// <param name="maxYDiff">The maximum difference in y coordinate to check if the AI is in the ellipse.</param>
     /// <param name="ellipseLUTLength">Length for the ellipse look up table.</param>
@@ -267,9 +267,9 @@ public class AvoidCloseVRAction : BTNode
     /// for lengths of the array.
     /// </summary>
     /// <param name="newFoci">The new foci of the ellipse.</param>
-    /// <param name="newInnerFociOffset"></param>
-    /// <param name="newOuterFociOffset"></param>
-    /// <param name="newCenterOffset"></param>
+    /// <param name="newInnerFociOffset">The offset from the new foci to make the foci of the new inner ellipse.</param>
+    /// <param name="newOuterFociOffset">The offset from the new foci to make the foci of the new outer ellipse.</param>
+    /// <param name="newCenterOffset">New offset of the player from the center of the new ellipse on the z axis.</param>
     /// <returns>Coroutine allowing for asynchronous execution of this function.</returns>
     private IEnumerator ChangeEllipseSize(Vector2 newFoci, Vector2 newInnerFociOffset, Vector2 newOuterFociOffset, float newCenterOffset)
     {
@@ -315,7 +315,7 @@ public class AvoidCloseVRAction : BTNode
     /// </summary>
     /// <param name="signedAngle">Current angle needed to get the next angle.</param>
     /// <param name="speed">The speed is used to determine how far away the next angle is.</param>
-    /// <returns></returns>
+    /// <returns>The next angle (signed) on the ellipse.</returns>
     private float FindNextEllipseAngle(float signedAngle, float speed)
     {
         float distance = (speed + 4.0f) * Time.deltaTime; // to account for curves, distance must be greater than what is possible to travel
@@ -381,7 +381,7 @@ public class AvoidCloseVRAction : BTNode
     /// <summary>
     /// Finds if a point is inside of the specified 2D ellipse.
     /// </summary>
-    /// <param name="point"></param>
+    /// <param name="point">The point you would like to check is in the ellipse.</param>
     /// <param name="foci">The foci of the ellipse.</param>
     /// <param name="center">The center point of the ellipse.</param>
     /// <param name="rotation">The rotation of the ellipse. Ensure that this rotation is only around the y axis.</param>
