@@ -1,6 +1,7 @@
 # Asymmetrical VR Game AI
 This repository contains all of the AI code from my asymmetrical virtual reality (VR) game project I worked on at Virginia Tech, named *Eidolon*. This is a slice of the much larger code base that I wanted to show off on my portfolio. I worked on this project advised by a professor and had some help from other students however I was the sole programmer.
 
+[![Video](https://img.youtube.com/vi/dneIoCeTpTM/maxresdefault.jpg)](https://youtu.be/dneIoCeTpTM?si=D8zD-7PSECiqe2Cy)
 ***[Check out this video I posted to my portfolio YouTube channel for a basic gameplay and tech showcase.](https://youtu.be/dneIoCeTpTM?si=D8zD-7PSECiqe2Cy)***
 
 For code samples, I recommend checking out [AvoidCloseVRAction.cs](/Src/Behaviors/Find%20Target%20Actions/AvoidCloseVRAction.cs), as it is one of the more complex scripts that I am proud of, but also feel free to check out the rest of the repository.
